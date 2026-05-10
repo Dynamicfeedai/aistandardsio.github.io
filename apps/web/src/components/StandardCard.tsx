@@ -6,12 +6,28 @@ interface StandardCardProps {
   standard: Standard
 }
 
+const categoryBgTints: Record<Standard['category'], string> = {
+  agent: 'var(--color-bg-agent)',
+  identity: 'var(--color-bg-identity)',
+  general: 'var(--color-bg-general)',
+}
+
+const categoryBorderColors: Record<Standard['category'], string> = {
+  agent: 'var(--color-border-agent)',
+  identity: 'var(--color-border-identity)',
+  general: 'var(--color-border-general)',
+}
+
 export default function StandardCard({ standard }: StandardCardProps) {
   return (
     <Link
       to={`/standards/${standard.slug}`}
-      className="glow-card glow-border block h-full p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] no-underline transition-all duration-200 hover:scale-[1.02]"
-      style={{ '--glow-color': categoryColors[standard.category] } as React.CSSProperties}
+      className="glow-card tinted-card block h-full p-6 rounded-xl no-underline hover:scale-[1.02]"
+      style={{
+        '--glow-color': categoryColors[standard.category],
+        '--card-bg-tint': categoryBgTints[standard.category],
+        '--card-border-color': categoryBorderColors[standard.category],
+      } as React.CSSProperties}
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <h3 className="font-mono font-semibold text-[var(--color-text)]">

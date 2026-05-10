@@ -62,8 +62,12 @@ export default function Home() {
 
           <GlowContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div
-              className="glow-card glow-border p-8 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]"
-              style={{ '--glow-color': 'var(--color-category-agent)' } as React.CSSProperties}
+              className="glow-card tinted-card p-8 rounded-xl"
+              style={{
+                '--glow-color': 'var(--color-category-agent)',
+                '--card-bg-tint': 'var(--color-bg-agent)',
+                '--card-border-color': 'var(--color-border-agent)',
+              } as React.CSSProperties}
             >
               <div
                 className="w-12 h-12 rounded-lg mb-4 flex items-center justify-center"
@@ -86,8 +90,12 @@ export default function Home() {
             </div>
 
             <div
-              className="glow-card glow-border p-8 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]"
-              style={{ '--glow-color': 'var(--color-category-identity)' } as React.CSSProperties}
+              className="glow-card tinted-card p-8 rounded-xl"
+              style={{
+                '--glow-color': 'var(--color-category-identity)',
+                '--card-bg-tint': 'var(--color-bg-identity)',
+                '--card-border-color': 'var(--color-border-identity)',
+              } as React.CSSProperties}
             >
               <div
                 className="w-12 h-12 rounded-lg mb-4 flex items-center justify-center"
@@ -110,8 +118,12 @@ export default function Home() {
             </div>
 
             <div
-              className="glow-card glow-border p-8 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]"
-              style={{ '--glow-color': 'var(--color-category-general)' } as React.CSSProperties}
+              className="glow-card tinted-card p-8 rounded-xl"
+              style={{
+                '--glow-color': 'var(--color-category-general)',
+                '--card-bg-tint': 'var(--color-bg-general)',
+                '--card-border-color': 'var(--color-border-general)',
+              } as React.CSSProperties}
             >
               <div
                 className="w-12 h-12 rounded-lg mb-4 flex items-center justify-center"

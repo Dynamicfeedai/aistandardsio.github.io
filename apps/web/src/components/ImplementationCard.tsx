@@ -13,8 +13,12 @@ export default function ImplementationCard({ repo, implementation }: Implementat
   return (
     <Link
       to={`/implementations/${slug}`}
-      className="glow-card glow-border block h-full p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] no-underline transition-all duration-200 hover:scale-[1.02]"
-      style={{ '--glow-color': 'var(--color-workload)' } as React.CSSProperties}
+      className="glow-card tinted-card block h-full p-6 rounded-xl no-underline hover:scale-[1.02]"
+      style={{
+        '--glow-color': 'var(--color-workload)',
+        '--card-bg-tint': 'var(--color-bg-general)',
+        '--card-border-color': 'var(--color-border-general)',
+      } as React.CSSProperties}
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <h3 className="font-mono font-semibold text-[var(--color-text)]">
