@@ -1,0 +1,201 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Dark TRON-style background */
+  --color-bg: #0a0a0f;
+  --color-bg-card: #12121a;
+  --color-bg-code: #1a1a25;
+  --color-border: #1e1e2e;
+  --color-border-hover: #2e2e42;
+  --color-text: #e4e4ed;
+  --color-text-muted: #8888a0;
+  --color-text-dim: #55556a;
+
+  /* Semantic identity colors */
+  --color-human: #00d4ff;      /* Cyan - human users/principals */
+  --color-agent: #ff6b00;      /* Orange - non-deterministic/LLM workloads */
+  --color-workload: #a855f7;   /* Purple - deterministic apps/services */
+
+  /* Accent (using agent orange as primary accent) */
+  --color-accent: #ff6b00;
+  --color-accent-hover: #e05800;
+
+  /* Category colors */
+  --color-category-agent: #ff6b00;
+  --color-category-identity: #00d4ff;
+  --color-category-general: #a855f7;
+
+  /* Status colors */
+  --color-status-draft: #8888a0;
+  --color-status-proposed: #fbbf24;
+  --color-status-adopted: #4ade80;
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #f4f6fa;
+    --color-bg-card: #ffffff;
+    --color-bg-code: #eef1f6;
+    --color-border: #d8dee8;
+    --color-border-hover: #b8c4d4;
+    --color-text: #0f172a;
+    --color-text-muted: #475569;
+    --color-text-dim: #64748b;
+    --color-accent: #e05800;
+    --color-accent-hover: #c04a00;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Glow card effect */
+@property --glow-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.glow-card {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Static subtle border glow - always visible */
+.glow-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  border-radius: inherit;
+  background: transparent;
+  box-shadow:
+    0 0 20px -5px color-mix(in srgb, var(--glow-color, var(--color-accent)) 30%, transparent),
+    inset 0 0 20px -10px color-mix(in srgb, var(--glow-color, var(--color-accent)) 15%, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glow-card:hover::after {
+  opacity: 1;
+}
+
+/* Interactive mouse-following glow */
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    200px circle at var(--mx, 50%) var(--my, 50%),
+    var(--glow-color, var(--color-accent)),
+    transparent 60%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: var(--glow-opacity, 0);
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+/* Ambient glow border - visible by default */
+.glow-border {
+  position: relative;
+  box-shadow:
+    0 0 0 1px var(--color-border),
+    0 0 15px -3px color-mix(in srgb, var(--glow-color, var(--color-accent)) 25%, transparent);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-border:hover {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--glow-color, var(--color-accent)) 50%, var(--color-border)),
+    0 0 25px -3px color-mix(in srgb, var(--glow-color, var(--color-accent)) 40%, transparent);
+}
+
+/* Border flow animation */
+.border-flow {
+  position: relative;
+  isolation: isolate;
+}
+
+.border-flow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--glow-angle),
+    transparent 0deg,
+    var(--color-accent) 60deg,
+    transparent 150deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: glow-rotate 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glow-rotate {
+  to {
+    --glow-angle: 360deg;
+  }
+}
+
+/* Reveal animation */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-reveal {
+  opacity: 0;
+  animation: reveal 500ms ease-out forwards;
+}
+
+/* Grid background effect */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
