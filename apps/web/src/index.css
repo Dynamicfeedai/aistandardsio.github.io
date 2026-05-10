@@ -34,10 +34,10 @@
   --color-bg-identity: rgba(0, 212, 255, 0.06);
   --color-bg-general: rgba(168, 85, 247, 0.06);
 
-  /* Category borders (always visible, subtle) */
-  --color-border-agent: rgba(255, 107, 0, 0.25);
-  --color-border-identity: rgba(0, 212, 255, 0.25);
-  --color-border-general: rgba(168, 85, 247, 0.25);
+  /* Category borders (always visible, bold) */
+  --color-border-agent: rgba(255, 107, 0, 0.5);
+  --color-border-identity: rgba(0, 212, 255, 0.5);
+  --color-border-general: rgba(168, 85, 247, 0.5);
 
   /* Status colors */
   --color-status-draft: #8888a0;
@@ -168,10 +168,10 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .tinted-card:hover {
-  border-color: color-mix(in srgb, var(--glow-color, var(--color-accent)) 50%, var(--card-border-color, var(--color-border)));
+  border-color: color-mix(in srgb, var(--glow-color, var(--color-accent)) 80%, var(--card-border-color, var(--color-border)));
   box-shadow:
-    0 0 30px -5px color-mix(in srgb, var(--glow-color, var(--color-accent)) 35%, transparent),
-    inset 0 1px 0 0 color-mix(in srgb, var(--glow-color, var(--color-accent)) 15%, transparent);
+    0 0 35px -5px color-mix(in srgb, var(--glow-color, var(--color-accent)) 45%, transparent),
+    inset 0 1px 0 0 color-mix(in srgb, var(--glow-color, var(--color-accent)) 20%, transparent);
 }
 
 /* Border flow animation */
