@@ -1,0 +1,15 @@
+{
+  "aistandardsio/agent-protocols": {
+    "name": "Agent Protocols",
+    "description": "Reference implementations of agent authentication and authorization protocols in Go. Provides a three-level architecture: core protocol packages, ecosystem adapters for identity providers, and end-to-end examples.",
+    "standards": ["id-jag", "a2a", "mcp", "spiffe"],
+    "languages": ["go"],
+    "categories": ["Libraries"],
+    "maintainers": ["grokify"],
+    "levels": {
+      "base": true,
+      "adapters": ["zitadel", "keycloak"],
+      "examples": true
+    }
+  }
+}

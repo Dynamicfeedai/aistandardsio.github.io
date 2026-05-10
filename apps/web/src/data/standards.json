@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "id-jag",
+    "name": "Identity Assertion JWT Authorization Grant",
+    "shortName": "ID-JAG",
+    "category": "agent",
+    "status": "draft",
+    "specUrl": "https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/",
+    "description": "An OAuth 2.0 extension that enables secure identity assertion delegation using JWT tokens. Allows agents to obtain access tokens by presenting identity assertions from trusted identity providers."
+  },
+  {
+    "slug": "a2a",
+    "name": "Agent-to-Agent Protocol",
+    "shortName": "A2A",
+    "category": "agent",
+    "status": "proposed",
+    "specUrl": "https://github.com/google/A2A",
+    "description": "Google's protocol for direct communication between AI agents. Defines standardized message formats, discovery mechanisms, and authentication patterns for agent-to-agent interactions."
+  },
+  {
+    "slug": "mcp",
+    "name": "Model Context Protocol",
+    "shortName": "MCP",
+    "category": "agent",
+    "status": "adopted",
+    "specUrl": "https://modelcontextprotocol.io/",
+    "description": "Anthropic's protocol for connecting AI models to external tools and data sources. Provides a standardized way for LLMs to interact with resources, tools, and prompts through a unified interface."
+  },
+  {
+    "slug": "aims",
+    "name": "Agent Identity Management System",
+    "shortName": "AIMS",
+    "category": "identity",
+    "status": "draft",
+    "specUrl": "https://datatracker.ietf.org/doc/draft-klrc-aiagent-auth/",
+    "description": "A framework for managing AI agent identities, including registration, authentication, and lifecycle management. Addresses unique challenges of non-human identity in distributed systems."
+  },
+  {
+    "slug": "spiffe",
+    "name": "Secure Production Identity Framework For Everyone",
+    "shortName": "SPIFFE",
+    "category": "identity",
+    "status": "adopted",
+    "specUrl": "https://spiffe.io/",
+    "description": "A set of standards for securely identifying and authenticating workloads in dynamic and heterogeneous environments. Provides cryptographically verifiable identity through SVIDs (SPIFFE Verifiable Identity Documents)."
+  },
+  {
+    "slug": "wimse",
+    "name": "Workload Identity in Multi-System Environments",
+    "shortName": "WIMSE",
+    "category": "identity",
+    "status": "draft",
+    "specUrl": "https://datatracker.ietf.org/wg/wimse/about/",
+    "description": "IETF working group developing standards for workload identity that work across different platforms, cloud providers, and trust domains. Focuses on interoperability and federation."
+  },
+  {
+    "slug": "openai-function-calling",
+    "name": "OpenAI Function Calling",
+    "shortName": "Functions",
+    "category": "general",
+    "status": "adopted",
+    "specUrl": "https://platform.openai.com/docs/guides/function-calling",
+    "description": "A specification for defining functions that LLMs can call during inference. Enables structured output generation and tool use through JSON Schema-based function definitions."
+  },
+  {
+    "slug": "aauth",
+    "name": "AAuth Protocol",
+    "shortName": "AAuth",
+    "category": "agent",
+    "status": "draft",
+    "specUrl": "https://datatracker.ietf.org/doc/draft-hardt-aauth-protocol",
+    "description": "Authentication and authorization protocol for AI agents. Provides cryptographic identity for HTTP clients with four access modes, supporting identity-based access through federated authorization."
+  }
+]
