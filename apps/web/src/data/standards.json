@@ -6,7 +6,15 @@
     "category": "agent",
     "status": "draft",
     "specUrl": "https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/",
-    "description": "An OAuth 2.0 extension that enables secure identity assertion delegation using JWT tokens. Allows agents to obtain access tokens by presenting identity assertions from trusted identity providers."
+    "description": "An OAuth 2.0 extension that enables secure identity assertion delegation using JWT tokens. Allows agents to obtain access tokens by presenting identity assertions from trusted identity providers.",
+    "links": [
+      {
+        "label": "Go SDK",
+        "url": "https://pkg.go.dev/github.com/aistandardsio/agent-protocols/idjag",
+        "type": "sdk",
+        "language": "go"
+      }
+    ]
   },
   {
     "slug": "a2a",
@@ -33,7 +41,15 @@
     "category": "identity",
     "status": "draft",
     "specUrl": "https://datatracker.ietf.org/doc/draft-klrc-aiagent-auth/",
-    "description": "A framework for managing AI agent identities, including registration, authentication, and lifecycle management. Addresses unique challenges of non-human identity in distributed systems."
+    "description": "A framework for managing AI agent identities, including registration, authentication, and lifecycle management. Addresses unique challenges of non-human identity in distributed systems.",
+    "links": [
+      {
+        "label": "Go SDK",
+        "url": "https://pkg.go.dev/github.com/aistandardsio/agent-protocols/aims",
+        "type": "sdk",
+        "language": "go"
+      }
+    ]
   },
   {
     "slug": "spiffe",
@@ -68,7 +84,33 @@
     "shortName": "AAuth",
     "category": "agent",
     "status": "draft",
-    "specUrl": "https://datatracker.ietf.org/doc/draft-hardt-aauth-protocol",
-    "description": "Authentication and authorization protocol for AI agents. Provides cryptographic identity for HTTP clients with four access modes, supporting identity-based access through federated authorization."
+    "specUrl": "https://datatracker.ietf.org/doc/draft-hardt-oauth-aauth-protocol/",
+    "websiteUrl": "https://www.aauth.dev/",
+    "description": "Authentication and authorization protocol for AI agents. Provides cryptographic identity for HTTP clients with four access modes, supporting identity-based access through federated authorization.",
+    "links": [
+      {
+        "label": "Spec (WIP)",
+        "url": "https://github.com/dickhardt/AAuth",
+        "type": "spec"
+      },
+      {
+        "label": "Go SDK",
+        "url": "https://pkg.go.dev/github.com/aistandardsio/agent-protocols/aauth",
+        "type": "sdk",
+        "language": "go"
+      },
+      {
+        "label": "TypeScript SDK",
+        "url": "https://github.com/aauth-dev/packages-js",
+        "type": "sdk",
+        "language": "typescript"
+      },
+      {
+        "label": "Python Demo",
+        "url": "https://github.com/christian-posta/aauth-full-demo",
+        "type": "demo",
+        "language": "python"
+      }
+    ]
   }
 ]
