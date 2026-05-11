@@ -11,12 +11,12 @@
       "date": "2026-05-11",
       "highlights": [
         { "description": "Initial release of AIStandards.io website for AI standards listing, commentary, and implementation tracking" },
-        { "description": "TRON-inspired dark theme with semantic identity colors (cyan=human, orange=agent, purple=workload)" },
+        { "description": "Dark theme with semantic identity colors (cyan=human, orange=agent, purple=workload)" },
         { "description": "Go CLI tooling for data validation, JSON schema generation, and Awesomely markdown export" }
       ],
       "added": [
         { "description": "React 19 + Vite 6 + Tailwind CSS v4 web application", "commit": "e87fe3b" },
-        { "description": "TRON-inspired theme with semantic identity colors for humans, agents, and workloads", "commit": "aaa0d59" },
+        { "description": "Dark theme with semantic identity colors for humans, agents, and workloads", "commit": "aaa0d59" },
         { "description": "Standards listing page with category filters (agent, identity, general)", "commit": "d43b5ce" },
         { "description": "Standard detail pages with specification links, website URLs, and SDK links", "commit": "53b25d8" },
         { "description": "Implementations listing page showing GitHub repositories", "commit": "d43b5ce" },
@@ -45,7 +45,8 @@
         { "description": "Material header positioning below navbar", "commit": "b66e6dd" }
       ],
       "documentation": [
-        { "description": "Awesomely markdown exports (AWESOME.md, AWESOME-BY-LANGUAGE.md)", "commit": "7d2b8bc" }
+        { "description": "Awesomely markdown exports (AWESOME.md, AWESOME-BY-LANGUAGE.md)", "commit": "7d2b8bc" },
+        { "description": "Design system specification with color, typography, spacing tokens and component specs", "commit": "1479b28" }
       ],
       "build": [
         { "description": "npm workspaces monorepo with apps/web structure", "commit": "a066794" },
