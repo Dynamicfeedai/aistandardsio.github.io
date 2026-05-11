@@ -156,6 +156,20 @@ var LitNavbar=function(a){"use strict";var gt=Object.defineProperty;var mt=(a,v,
       align-items: baseline;
     }
 
+    .nav-title-accent {
+      color: var(--ln-primary);
+    }
+
+    .nav-title-primary {
+      color: var(--ln-text);
+    }
+
+    .nav-title-muted {
+      font-weight: 400;
+      color: var(--ln-text-muted);
+    }
+
+    /* Legacy: kept for backward compatibility */
     .nav-title-light {
       font-weight: 400;
       color: var(--ln-text-muted);
@@ -752,12 +766,15 @@ var LitNavbar=function(a){"use strict";var gt=Object.defineProperty;var mt=(a,v,
           @close=${this._closeMobileMenu}
         ></lit-mobile-menu>
       </nav>
-    `}_renderBrand(){const{brand:e,baseUrl:i=""}=this.config,n=e.homeUrl||i||"/";return h`
+    `}_renderBrand(){const{brand:e,baseUrl:i=""}=this.config,n=e.homeUrl||i||"/",o=e.titlePrimary||e.titleMuted;return h`
       <a href="${n}" class="nav-brand">
         ${e.logoUrl?h`<img src="${e.logoUrl}" alt="${e.logoAlt||e.title}" class="nav-logo" />`:d}
         <span class="nav-title">
-          ${e.titleGradient?h`<span class="gradient-text">${e.title}</span>`:h`<span>${e.title}</span>`}
-          ${e.titleSecondary?h`<span class="nav-title-light">${e.titleSecondary}</span>`:d}
+          ${e.titleGradient?h`<span class="gradient-text">${e.title}</span>`:h`<span class="nav-title-accent">${e.title}</span>`}
+          ${o?h`
+                ${e.titlePrimary?h`<span class="nav-title-primary">${e.titlePrimary}</span>`:d}
+                ${e.titleMuted?h`<span class="nav-title-muted">${e.titleMuted}</span>`:d}
+              `:e.titleSecondary?h`<span class="nav-title-light">${e.titleSecondary}</span>`:d}
         </span>
       </a>
     `}_renderDesktopLinks(){return h`
