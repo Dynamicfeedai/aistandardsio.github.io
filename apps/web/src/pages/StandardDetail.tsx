@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router'
 import standards from '@/data/standards.json'
 import implementationsData from '@/data/implementations.json'
+import languages from '@/data/languages.json'
 import type { Standard, ImplementationsMap } from '@/lib/types'
 import { categoryColors, categoryLabels, statusColors } from '@/lib/types'
 
@@ -34,6 +35,12 @@ export default function StandardDetail() {
   const relatedImplementations = Object.entries(implementations).filter(
     ([, impl]) => impl.standards.includes(standard.slug)
   )
+
+  // Group links by type
+  const sdkLinks = standard.links?.filter((l) => l.type === 'sdk') || []
+  const demoLinks = standard.links?.filter((l) => l.type === 'demo') || []
+  const specLinks = standard.links?.filter((l) => l.type === 'spec') || []
+  const docsLinks = standard.links?.filter((l) => l.type === 'docs') || []
 
   return (
     <div className="py-16 md:py-24">
@@ -78,19 +85,152 @@ export default function StandardDetail() {
           </p>
         </div>
 
+        {/* Resources Section */}
         <div className="border-t border-[var(--color-border)] pt-8 mb-12">
-          <h3 className="text-lg font-semibold mb-4">Specification</h3>
-          <a
-            href={standard.specUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[var(--color-accent)] hover:underline no-underline"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-            {standard.specUrl}
-          </a>
+          <h3 className="text-lg font-semibold mb-6">Resources</h3>
+
+          <div className="space-y-6">
+            {/* Primary Spec */}
+            <div>
+              <h4 className="text-sm font-medium text-[var(--color-text-muted)] mb-3">Specification</h4>
+              <a
+                href={standard.specUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[var(--color-accent)] hover:underline no-underline"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                {standard.specUrl}
+              </a>
+              {specLinks.length > 0 && (
+                <div className="mt-2 space-y-2">
+                  {specLinks.map((link, i) => (
+                    <a
+                      key={i}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-[var(--color-text-muted)] hover:text-[var(--color-accent)] no-underline text-sm"
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Website */}
+            {standard.websiteUrl && (
+              <div>
+                <h4 className="text-sm font-medium text-[var(--color-text-muted)] mb-3">Website</h4>
+                <a
+                  href={standard.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[var(--color-accent)] hover:underline no-underline"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                  {standard.websiteUrl}
+                </a>
+              </div>
+            )}
+
+            {/* SDKs */}
+            {sdkLinks.length > 0 && (
+              <div>
+                <h4 className="text-sm font-medium text-[var(--color-text-muted)] mb-3">SDKs & Libraries</h4>
+                <div className="flex flex-wrap gap-3">
+                  {sdkLinks.map((link, i) => {
+                    const lang = link.language ? languages[link.language as keyof typeof languages] : null
+                    return (
+                      <a
+                        key={i}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] hover:border-[var(--color-border-hover)] no-underline transition-colors"
+                      >
+                        {lang && (
+                          <img
+                            src={lang.icon}
+                            alt={lang.name}
+                            className="w-5 h-5"
+                          />
+                        )}
+                        <span className="text-[var(--color-text)]">{link.label}</span>
+                        <svg className="w-4 h-4 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Demos */}
+            {demoLinks.length > 0 && (
+              <div>
+                <h4 className="text-sm font-medium text-[var(--color-text-muted)] mb-3">Demos & Examples</h4>
+                <div className="flex flex-wrap gap-3">
+                  {demoLinks.map((link, i) => {
+                    const lang = link.language ? languages[link.language as keyof typeof languages] : null
+                    return (
+                      <a
+                        key={i}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] hover:border-[var(--color-border-hover)] no-underline transition-colors"
+                      >
+                        {lang && (
+                          <img
+                            src={lang.icon}
+                            alt={lang.name}
+                            className="w-5 h-5"
+                          />
+                        )}
+                        <span className="text-[var(--color-text)]">{link.label}</span>
+                        <svg className="w-4 h-4 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Documentation */}
+            {docsLinks.length > 0 && (
+              <div>
+                <h4 className="text-sm font-medium text-[var(--color-text-muted)] mb-3">Documentation</h4>
+                <div className="space-y-2">
+                  {docsLinks.map((link, i) => (
+                    <a
+                      key={i}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-[var(--color-accent)] hover:underline no-underline"
+                    >
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {relatedImplementations.length > 0 && (
@@ -98,11 +238,11 @@ export default function StandardDetail() {
             <h3 className="text-lg font-semibold mb-4">Implementations</h3>
             <div className="space-y-4">
               {relatedImplementations.map(([repo, impl]) => {
-                const slug = repo.replace('/', '-')
+                const implSlug = repo.replace('/', '-')
                 return (
                   <Link
                     key={repo}
-                    to={`/implementations/${slug}`}
+                    to={`/implementations/${implSlug}`}
                     className="block p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] hover:border-[var(--color-border-hover)] no-underline transition-colors"
                   >
                     <div className="flex items-center gap-3">
