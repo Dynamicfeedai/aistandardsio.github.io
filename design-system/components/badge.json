@@ -1,0 +1,68 @@
+{
+  "name": "Badge",
+  "description": "Small label component for status indicators and categories",
+  "variants": [
+    {
+      "name": "status-draft",
+      "description": "Badge for draft standards",
+      "tokens": {
+        "background": "transparent",
+        "border": "status-draft",
+        "textColor": "status-draft"
+      }
+    },
+    {
+      "name": "status-proposed",
+      "description": "Badge for proposed standards",
+      "tokens": {
+        "background": "transparent",
+        "border": "status-proposed",
+        "textColor": "status-proposed"
+      }
+    },
+    {
+      "name": "status-adopted",
+      "description": "Badge for adopted standards",
+      "tokens": {
+        "background": "transparent",
+        "border": "status-adopted",
+        "textColor": "status-adopted"
+      }
+    },
+    {
+      "name": "category-agent",
+      "description": "Badge for agent protocol category",
+      "tokens": {
+        "background": "bg-agent",
+        "border": "border-agent",
+        "textColor": "category-agent"
+      }
+    },
+    {
+      "name": "category-identity",
+      "description": "Badge for identity standards category",
+      "tokens": {
+        "background": "bg-identity",
+        "border": "border-identity",
+        "textColor": "category-identity"
+      }
+    },
+    {
+      "name": "category-general",
+      "description": "Badge for general AI standards category",
+      "tokens": {
+        "background": "bg-general",
+        "border": "border-general",
+        "textColor": "category-general"
+      }
+    }
+  ],
+  "sizing": {
+    "padding": "spacing-1 spacing-2",
+    "fontSize": "0.75rem",
+    "borderRadius": "border-radius-sm"
+  },
+  "usage": {
+    "react": "<span className=\"inline-flex items-center px-2 py-1 text-xs rounded border border-status-draft text-status-draft\">Draft</span>"
+  }
+}

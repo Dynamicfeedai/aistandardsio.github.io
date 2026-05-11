@@ -1,0 +1,76 @@
+{
+  "name": "Card",
+  "description": "Container component for standards and implementations with category-specific styling",
+  "variants": [
+    {
+      "name": "default",
+      "description": "Standard card with dark background and subtle border",
+      "tokens": {
+        "background": "bg-card",
+        "border": "border",
+        "borderRadius": "border-radius-lg",
+        "padding": "spacing-6"
+      }
+    },
+    {
+      "name": "tinted-agent",
+      "description": "Card for agent protocols with orange tint and border",
+      "tokens": {
+        "background": "bg-agent",
+        "border": "border-agent",
+        "borderRadius": "border-radius-lg",
+        "padding": "spacing-6",
+        "glowColor": "category-agent"
+      }
+    },
+    {
+      "name": "tinted-identity",
+      "description": "Card for identity standards with cyan tint and border",
+      "tokens": {
+        "background": "bg-identity",
+        "border": "border-identity",
+        "borderRadius": "border-radius-lg",
+        "padding": "spacing-6",
+        "glowColor": "category-identity"
+      }
+    },
+    {
+      "name": "tinted-general",
+      "description": "Card for general AI standards with purple tint and border",
+      "tokens": {
+        "background": "bg-general",
+        "border": "border-general",
+        "borderRadius": "border-radius-lg",
+        "padding": "spacing-6",
+        "glowColor": "category-general"
+      }
+    }
+  ],
+  "states": {
+    "hover": {
+      "description": "Enhanced glow effect on hover",
+      "changes": {
+        "boxShadow": "0 0 30px -5px color-mix(in srgb, var(--glow-color) 25%, transparent)"
+      }
+    }
+  },
+  "cssClass": ".tinted-card",
+  "cssCustomProperties": [
+    {
+      "name": "--card-bg-tint",
+      "description": "Category-specific background tint color"
+    },
+    {
+      "name": "--card-border-color",
+      "description": "Category-specific border color"
+    },
+    {
+      "name": "--glow-color",
+      "description": "Color used for box-shadow glow effect"
+    }
+  ],
+  "usage": {
+    "react": "<div className=\"tinted-card\" style={{ '--card-bg-tint': 'var(--color-bg-agent)', '--card-border-color': 'var(--color-border-agent)', '--glow-color': 'var(--color-agent)' } as React.CSSProperties}>",
+    "tailwind": "Use @apply with tinted-card class and CSS custom properties for category colors"
+  }
+}

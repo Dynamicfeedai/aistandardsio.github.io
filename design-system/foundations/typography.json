@@ -1,0 +1,17 @@
+[
+  {
+    "id": "font-sans",
+    "value": "'Inter', system-ui, sans-serif",
+    "description": "Primary sans-serif font for body text"
+  },
+  {
+    "id": "font-mono",
+    "value": "'JetBrains Mono', ui-monospace, monospace",
+    "description": "Monospace font for code and technical content"
+  },
+  {
+    "id": "font-display",
+    "value": "'JetBrains Mono', ui-monospace, monospace",
+    "description": "Display font for headings"
+  }
+]

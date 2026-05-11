@@ -1,0 +1,127 @@
+[
+  {
+    "id": "bg",
+    "value": "#0a0a0f",
+    "description": "Primary background color"
+  },
+  {
+    "id": "bg-card",
+    "value": "#12121a",
+    "description": "Card and elevated surface background"
+  },
+  {
+    "id": "bg-code",
+    "value": "#1a1a25",
+    "description": "Code block background"
+  },
+  {
+    "id": "border",
+    "value": "#1e1e2e",
+    "description": "Default border color"
+  },
+  {
+    "id": "border-hover",
+    "value": "#2e2e42",
+    "description": "Border color on hover"
+  },
+  {
+    "id": "text",
+    "value": "#e4e4ed",
+    "description": "Primary text color"
+  },
+  {
+    "id": "text-muted",
+    "value": "#8888a0",
+    "description": "Secondary/muted text color"
+  },
+  {
+    "id": "text-dim",
+    "value": "#55556a",
+    "description": "Tertiary/dim text color"
+  },
+  {
+    "id": "human",
+    "value": "#00d4ff",
+    "description": "Semantic color for human users and principals (cyan)"
+  },
+  {
+    "id": "agent",
+    "value": "#ff6b00",
+    "description": "Semantic color for AI agents and LLM workloads (orange)"
+  },
+  {
+    "id": "workload",
+    "value": "#a855f7",
+    "description": "Semantic color for deterministic workloads and services (purple)"
+  },
+  {
+    "id": "accent",
+    "value": "#ff6b00",
+    "description": "Primary accent color (uses agent orange)"
+  },
+  {
+    "id": "accent-hover",
+    "value": "#e05800",
+    "description": "Accent color on hover"
+  },
+  {
+    "id": "category-agent",
+    "value": "#ff6b00",
+    "description": "Category color for agent protocols"
+  },
+  {
+    "id": "category-identity",
+    "value": "#00d4ff",
+    "description": "Category color for identity standards"
+  },
+  {
+    "id": "category-general",
+    "value": "#a855f7",
+    "description": "Category color for general AI standards"
+  },
+  {
+    "id": "bg-agent",
+    "value": "rgba(255, 107, 0, 0.06)",
+    "description": "Tinted background for agent category cards"
+  },
+  {
+    "id": "bg-identity",
+    "value": "rgba(0, 212, 255, 0.06)",
+    "description": "Tinted background for identity category cards"
+  },
+  {
+    "id": "bg-general",
+    "value": "rgba(168, 85, 247, 0.06)",
+    "description": "Tinted background for general category cards"
+  },
+  {
+    "id": "border-agent",
+    "value": "rgba(255, 107, 0, 0.5)",
+    "description": "Border color for agent category cards"
+  },
+  {
+    "id": "border-identity",
+    "value": "rgba(0, 212, 255, 0.5)",
+    "description": "Border color for identity category cards"
+  },
+  {
+    "id": "border-general",
+    "value": "rgba(168, 85, 247, 0.5)",
+    "description": "Border color for general category cards"
+  },
+  {
+    "id": "status-draft",
+    "value": "#8888a0",
+    "description": "Status badge color for draft standards"
+  },
+  {
+    "id": "status-proposed",
+    "value": "#fbbf24",
+    "description": "Status badge color for proposed standards"
+  },
+  {
+    "id": "status-adopted",
+    "value": "#4ade80",
+    "description": "Status badge color for adopted standards"
+  }
+]
