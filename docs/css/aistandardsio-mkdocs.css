@@ -308,10 +308,24 @@
    Unified Navigation Bar Offset
    ============================================ */
 
-/* Offset sidebar for unified navbar (64px) */
-.md-sidebar {
+/* Position custom navbar container */
+#ais-navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* Offset MkDocs header for unified navbar (64px) */
+.md-header {
   top: 64px;
-  height: calc(100vh - 64px);
+}
+
+/* Offset sidebar for navbar + header */
+.md-sidebar {
+  top: calc(64px + var(--md-header-height, 48px));
+  height: calc(100vh - 64px - var(--md-header-height, 48px));
 }
 
 /* Offset main content area */
@@ -332,11 +346,15 @@
 /* Mobile adjustments */
 @media screen and (max-width: 76.1875em) {
   .md-sidebar--primary {
-    top: 64px;
+    top: calc(64px + var(--md-header-height, 48px));
   }
 }
 
 @media screen and (max-width: 60em) {
+  .md-header {
+    top: 64px;
+  }
+
   .md-nav__source {
     top: 64px;
   }
