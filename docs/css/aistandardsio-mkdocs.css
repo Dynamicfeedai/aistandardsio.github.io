@@ -308,15 +308,10 @@
    Unified Navigation Bar Offset
    ============================================ */
 
-/* Offset MkDocs header for unified navbar (64px) */
-.md-header {
-  top: 64px;
-}
-
-/* Offset sidebar for navbar + header */
+/* Offset sidebar for unified navbar (64px) */
 .md-sidebar {
-  top: calc(64px + var(--md-header-height, 48px));
-  height: calc(100vh - 64px - var(--md-header-height, 48px));
+  top: 64px;
+  height: calc(100vh - 64px);
 }
 
 /* Offset main content area */
@@ -342,10 +337,6 @@
 }
 
 @media screen and (max-width: 60em) {
-  .md-header {
-    top: 64px;
-  }
-
   .md-nav__source {
     top: 64px;
   }
