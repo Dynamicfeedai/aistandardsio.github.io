@@ -30,6 +30,9 @@ type Language struct {
 
 	// Color is the hex color associated with the language (for badges/UI).
 	Color string `json:"color" jsonschema:"required,pattern=^#[0-9A-Fa-f]{6}$"`
+
+	// Icon is the path to the language's SVG icon.
+	Icon string `json:"icon" jsonschema:"required"`
 }
 
 // Languages is a collection of Language entries keyed by ID.
@@ -42,20 +45,20 @@ type Languages struct {
 func DefaultLanguages() Languages {
 	return Languages{
 		Languages: map[LanguageID]Language{
-			LangGo:         {ID: LangGo, Name: "Go", Color: "#00ADD8"},
-			LangPython:     {ID: LangPython, Name: "Python", Color: "#3776AB"},
-			LangTypeScript: {ID: LangTypeScript, Name: "TypeScript", Color: "#3178C6"},
-			LangJavaScript: {ID: LangJavaScript, Name: "JavaScript", Color: "#F7DF1E"},
-			LangRust:       {ID: LangRust, Name: "Rust", Color: "#DEA584"},
-			LangJava:       {ID: LangJava, Name: "Java", Color: "#ED8B00"},
-			LangCSharp:     {ID: LangCSharp, Name: "C#", Color: "#512BD4"},
-			LangRuby:       {ID: LangRuby, Name: "Ruby", Color: "#CC342D"},
-			LangSwift:      {ID: LangSwift, Name: "Swift", Color: "#F05138"},
-			LangKotlin:     {ID: LangKotlin, Name: "Kotlin", Color: "#7F52FF"},
-			LangCpp:        {ID: LangCpp, Name: "C++", Color: "#00599C"},
-			LangC:          {ID: LangC, Name: "C", Color: "#A8B9CC"},
-			LangPHP:        {ID: LangPHP, Name: "PHP", Color: "#777BB4"},
-			LangElixir:     {ID: LangElixir, Name: "Elixir", Color: "#4B275F"},
+			LangGo:         {ID: LangGo, Name: "Go", Color: "#00ADD8", Icon: "/languages/go.svg"},
+			LangPython:     {ID: LangPython, Name: "Python", Color: "#3776AB", Icon: "/languages/python.svg"},
+			LangTypeScript: {ID: LangTypeScript, Name: "TypeScript", Color: "#3178C6", Icon: "/languages/typescript.svg"},
+			LangJavaScript: {ID: LangJavaScript, Name: "JavaScript", Color: "#F7DF1E", Icon: "/languages/javascript.svg"},
+			LangRust:       {ID: LangRust, Name: "Rust", Color: "#DEA584", Icon: "/languages/rust.svg"},
+			LangJava:       {ID: LangJava, Name: "Java", Color: "#ED8B00", Icon: "/languages/java.svg"},
+			LangCSharp:     {ID: LangCSharp, Name: "C#", Color: "#512BD4", Icon: "/languages/csharp.svg"},
+			LangRuby:       {ID: LangRuby, Name: "Ruby", Color: "#CC342D", Icon: "/languages/ruby.svg"},
+			LangSwift:      {ID: LangSwift, Name: "Swift", Color: "#F05138", Icon: "/languages/swift.svg"},
+			LangKotlin:     {ID: LangKotlin, Name: "Kotlin", Color: "#7F52FF", Icon: "/languages/kotlin.svg"},
+			LangCpp:        {ID: LangCpp, Name: "C++", Color: "#00599C", Icon: "/languages/cpp.svg"},
+			LangC:          {ID: LangC, Name: "C", Color: "#A8B9CC", Icon: "/languages/c.svg"},
+			LangPHP:        {ID: LangPHP, Name: "PHP", Color: "#777BB4", Icon: "/languages/php.svg"},
+			LangElixir:     {ID: LangElixir, Name: "Elixir", Color: "#4B275F", Icon: "/languages/elixir.svg"},
 		},
 	}
 }

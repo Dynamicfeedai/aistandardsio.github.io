@@ -18,6 +18,32 @@ const (
 	StatusAdopted  StandardStatus = "adopted"
 )
 
+// LinkType categorizes a link related to a standard.
+type LinkType string
+
+const (
+	LinkTypeSpec    LinkType = "spec"    // Specification document
+	LinkTypeSDK     LinkType = "sdk"     // SDK/library implementation
+	LinkTypeDemo    LinkType = "demo"    // Demo or example
+	LinkTypeDocs    LinkType = "docs"    // Documentation
+	LinkTypeWebsite LinkType = "website" // Project website
+)
+
+// StandardLink represents a related URL for a standard.
+type StandardLink struct {
+	// Label is the display text for the link.
+	Label string `json:"label" jsonschema:"required,minLength=1"`
+
+	// URL is the link destination.
+	URL string `json:"url" jsonschema:"required,format=uri"`
+
+	// Type categorizes the link.
+	Type LinkType `json:"type" jsonschema:"required,enum=spec,enum=sdk,enum=demo,enum=docs,enum=website"`
+
+	// Language is the programming language for SDK/demo links (optional).
+	Language LanguageID `json:"language,omitempty"`
+}
+
 // Standard represents an AI standard or protocol specification.
 type Standard struct {
 	// Slug is the unique identifier for the standard (e.g., "mcp", "id-jag").
@@ -35,11 +61,17 @@ type Standard struct {
 	// Status indicates the adoption level.
 	Status StandardStatus `json:"status" jsonschema:"required,enum=draft,enum=proposed,enum=adopted"`
 
-	// SpecURL is the URL to the specification document.
+	// SpecURL is the URL to the primary specification document.
 	SpecURL string `json:"specUrl" jsonschema:"required,format=uri"`
 
 	// Description provides a brief overview of the standard.
 	Description string `json:"description" jsonschema:"required,minLength=10"`
+
+	// WebsiteURL is the optional project website.
+	WebsiteURL string `json:"websiteUrl,omitempty" jsonschema:"format=uri"`
+
+	// Links contains additional related URLs (SDKs, demos, docs, etc.).
+	Links []StandardLink `json:"links,omitempty"`
 }
 
 // Standards is a collection of Standard entries.
