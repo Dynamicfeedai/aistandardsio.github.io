@@ -1,3 +1,12 @@
+export type LinkType = 'spec' | 'sdk' | 'demo' | 'docs' | 'website'
+
+export interface StandardLink {
+  label: string
+  url: string
+  type: LinkType
+  language?: LanguageID
+}
+
 export interface Standard {
   slug: string
   name: string
@@ -6,6 +15,8 @@ export interface Standard {
   status: 'draft' | 'proposed' | 'adopted'
   specUrl: string
   description: string
+  websiteUrl?: string
+  links?: StandardLink[]
 }
 
 export interface Implementation {
@@ -45,6 +56,7 @@ export interface Language {
   id: LanguageID
   name: string
   color: string
+  icon: string
 }
 
 export type ImplementationsMap = Record<string, Implementation>
