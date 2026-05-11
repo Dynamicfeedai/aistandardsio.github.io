@@ -1,0 +1,57 @@
+{
+  "irVersion": "1.0",
+  "project": "aistandardsio.github.io",
+  "repository": "https://github.com/aistandardsio/aistandardsio.github.io",
+  "versioning": "semver",
+  "commitConvention": "conventional",
+  "maintainers": ["grokify"],
+  "releases": [
+    {
+      "version": "v0.1.0",
+      "date": "2026-05-11",
+      "highlights": [
+        { "description": "Initial release of AIStandards.io website for AI standards listing, commentary, and implementation tracking" },
+        { "description": "TRON-inspired dark theme with semantic identity colors (cyan=human, orange=agent, purple=workload)" },
+        { "description": "Go CLI tooling for data validation, JSON schema generation, and Awesomely markdown export" }
+      ],
+      "added": [
+        { "description": "React 19 + Vite 6 + Tailwind CSS v4 web application", "commit": "e87fe3b" },
+        { "description": "TRON-inspired theme with semantic identity colors for humans, agents, and workloads", "commit": "aaa0d59" },
+        { "description": "Standards listing page with category filters (agent, identity, general)", "commit": "d43b5ce" },
+        { "description": "Standard detail pages with specification links, website URLs, and SDK links", "commit": "53b25d8" },
+        { "description": "Implementations listing page showing GitHub repositories", "commit": "d43b5ce" },
+        { "description": "Implementation detail pages with architecture levels and supported standards", "commit": "d43b5ce" },
+        { "description": "Go types for Standard, Implementation, and Language with JSON schema annotations", "commit": "80ea3ee" },
+        { "description": "Go validation package for cross-validating standards and implementations", "commit": "84f22f3" },
+        { "description": "Awesomely markdown export for generating Awesome-list style documentation", "commit": "1b4a9fa" },
+        { "description": "CLI tool with validate, schema, and awesome commands", "commit": "7a8b67a" },
+        { "description": "StandardLink type with language support for SDK/demo links", "commit": "917ea2b" },
+        { "description": "Language SVG icons for Go, Python, TypeScript, JavaScript", "commit": "4727454" },
+        { "description": "SDK and resource links for ID-JAG, AAuth, and AIMS standards", "commit": "6ca6a10" },
+        { "description": "Unified lit-navbar component for cross-site navigation", "commit": "6eb5113" },
+        { "description": "MkDocs Material theme CSS for documentation sites", "commit": "b7f1c33" },
+        { "description": "AIStandards.io brand icon", "commit": "509ba01" },
+        { "description": "GitHub button in navbar", "commit": "3510119" },
+        { "description": "JSON schemas generated from Go types for data validation", "commit": "26cc6f6" },
+        { "description": "GitHub Pages SPA support with 404.html fallback", "commit": "270abd8" }
+      ],
+      "changed": [
+        { "description": "Card styling updated with tinted backgrounds and always-visible colored borders", "commit": "354099f" },
+        { "description": "Card border brightness increased to 50% opacity for better visibility", "commit": "1f1db39" }
+      ],
+      "fixed": [
+        { "description": "Navbar offset styles for MkDocs integration", "commit": "a9ef8e3" },
+        { "description": "Navbar IIFE build for cross-origin loading compatibility", "commit": "fe7e0d7" },
+        { "description": "Material header positioning below navbar", "commit": "b66e6dd" }
+      ],
+      "documentation": [
+        { "description": "Awesomely markdown exports (AWESOME.md, AWESOME-BY-LANGUAGE.md)", "commit": "7d2b8bc" }
+      ],
+      "build": [
+        { "description": "npm workspaces monorepo with apps/web structure", "commit": "a066794" },
+        { "description": "Vite plugin for GitHub Pages support (404.html, .nojekyll, CNAME)", "commit": "270abd8" },
+        { "description": "Production output to /docs directory for GitHub Pages deployment", "commit": "b336600" }
+      ]
+    }
+  ]
+}
