@@ -40,9 +40,14 @@ export default function Nav() {
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 px-5 md:px-8 h-14">
           <Link
             to="/"
-            className="no-underline relative z-10 shrink-0 flex items-center gap-2"
+            className="no-underline relative z-10 shrink-0 flex items-center gap-2.5"
             aria-label="AIStandards.io"
           >
+            <img
+              src="/icon.png"
+              alt=""
+              className="w-8 h-8 rounded"
+            />
             <span className="font-display font-bold text-xl">
               <span className="text-[var(--color-accent)]">AI</span>
               <span className="text-[var(--color-text)]">Standards</span>

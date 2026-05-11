@@ -11,6 +11,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-bg)]" />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="flex justify-center mb-8">
+          <img
+            src="/icon.png"
+            alt="AIStandards.io"
+            className="w-24 h-24 md:w-32 md:h-32"
+          />
+        </div>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1] uppercase">
           <span className="text-[var(--color-text)]">AI </span>
           <span className="text-[var(--color-accent)]">Standards</span>
