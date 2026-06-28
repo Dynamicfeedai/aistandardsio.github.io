@@ -1,14 +1,26 @@
 {
   "aistandardsio/agent-protocols": {
     "name": "Agent Protocols",
-    "description": "Reference implementations of agent authentication and authorization protocols in Go. Provides a three-level architecture: core protocol packages, ecosystem adapters for identity providers, and end-to-end examples.",
-    "standards": ["id-jag", "a2a", "mcp", "spiffe"],
+    "description": "Go implementations of agent authentication and authorization protocols. Includes core protocol packages, identity provider adapters, cross-protocol bridge, and working examples.",
+    "standards": ["id-jag", "aauth", "aims", "a2a", "authzen", "scim-agent-extension"],
     "languages": ["go"],
     "categories": ["Libraries"],
     "maintainers": ["grokify"],
     "levels": {
       "base": true,
-      "adapters": ["zitadel", "keycloak"],
+      "adapters": ["zitadel", "sharkauth", "ory"],
+      "examples": true
+    }
+  },
+  "aistandardsio/oaiaf": {
+    "name": "Open Agent Internet Architecture Framework",
+    "description": "Reference architecture for building AI agents with built-in support for ID-JAG, AAuth, AIMS, A2A, AuthZEN, and MCP. Provides the five-layer agent identity stack model.",
+    "standards": ["id-jag", "aauth", "aims", "a2a", "authzen", "spiffe", "wimse"],
+    "languages": ["go"],
+    "categories": ["Libraries", "Architecture"],
+    "maintainers": ["grokify"],
+    "levels": {
+      "base": true,
       "examples": true
     }
   }

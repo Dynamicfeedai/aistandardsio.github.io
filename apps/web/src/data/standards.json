@@ -13,6 +13,11 @@
         "url": "https://pkg.go.dev/github.com/aistandardsio/agent-protocols/idjag",
         "type": "sdk",
         "language": "go"
+      },
+      {
+        "label": "Documentation",
+        "url": "https://aistandards.io/agent-protocols/idjag/protocol-overview/",
+        "type": "docs"
       }
     ]
   },
@@ -22,8 +27,26 @@
     "shortName": "A2A",
     "category": "agent",
     "status": "proposed",
-    "specUrl": "https://github.com/google/A2A",
-    "description": "Google's protocol for direct communication between AI agents. Defines standardized message formats, discovery mechanisms, and authentication patterns for agent-to-agent interactions."
+    "specUrl": "https://google.github.io/A2A/",
+    "description": "Google's protocol for direct communication between AI agents. Defines standardized message formats, discovery mechanisms, and authentication patterns for agent-to-agent interactions.",
+    "links": [
+      {
+        "label": "Spec (GitHub)",
+        "url": "https://github.com/google/A2A",
+        "type": "spec"
+      },
+      {
+        "label": "Go SDK",
+        "url": "https://pkg.go.dev/github.com/aistandardsio/agent-protocols/a2a",
+        "type": "sdk",
+        "language": "go"
+      },
+      {
+        "label": "Documentation",
+        "url": "https://aistandards.io/agent-protocols/a2a/overview/",
+        "type": "docs"
+      }
+    ]
   },
   {
     "slug": "mcp",
@@ -48,6 +71,11 @@
         "url": "https://pkg.go.dev/github.com/aistandardsio/agent-protocols/aims",
         "type": "sdk",
         "language": "go"
+      },
+      {
+        "label": "Documentation",
+        "url": "https://aistandards.io/agent-protocols/aims/overview/",
+        "type": "docs"
       }
     ]
   },
@@ -110,6 +138,65 @@
         "url": "https://github.com/christian-posta/aauth-full-demo",
         "type": "demo",
         "language": "python"
+      },
+      {
+        "label": "Documentation",
+        "url": "https://aistandards.io/agent-protocols/aauth/overview/",
+        "type": "docs"
+      }
+    ]
+  },
+  {
+    "slug": "scim-agent-extension",
+    "name": "SCIM Agents and Agentic Applications Extension",
+    "shortName": "SCIM-Agent",
+    "category": "identity",
+    "status": "draft",
+    "specUrl": "https://datatracker.ietf.org/doc/draft-abbey-scim-agent-extension/",
+    "description": "A SCIM 2.0 extension for provisioning and managing AI agents and agentic applications across organizational domains. Defines Agent and AgenticApplication resource types for identity providers to manage agent lifecycle, discovery, and access control.",
+    "links": [
+      {
+        "label": "Spec (GitHub)",
+        "url": "https://github.com/macyabbey/draft-abbey-scim-agent-extension",
+        "type": "spec"
+      },
+      {
+        "label": "Go SDK",
+        "url": "https://pkg.go.dev/github.com/aistandardsio/agent-protocols/scimext",
+        "type": "sdk",
+        "language": "go"
+      },
+      {
+        "label": "Documentation",
+        "url": "https://aistandards.io/agent-protocols/scimext/overview/",
+        "type": "docs"
+      }
+    ]
+  },
+  {
+    "slug": "authzen",
+    "name": "AuthZEN Authorization API",
+    "shortName": "AuthZEN",
+    "category": "agent",
+    "status": "draft",
+    "specUrl": "https://openid.github.io/authzen/",
+    "description": "OpenID Foundation specification for authorization API interoperability. Defines a standard interface between Policy Enforcement Points (PEP) and Policy Decision Points (PDP) for fine-grained access control decisions.",
+    "links": [
+      {
+        "label": "Spec (GitHub)",
+        "url": "https://github.com/openid/authzen",
+        "type": "spec"
+      },
+      {
+        "label": "Go SDK",
+        "url": "https://pkg.go.dev/github.com/aistandardsio/agent-protocols/authzen",
+        "type": "sdk",
+        "language": "go"
+      },
+      {
+        "label": "Documentation",
+        "url": "https://aistandards.io/agent-protocols/authzen/overview/",
+        "type": "docs"
       }
     ]
   }
