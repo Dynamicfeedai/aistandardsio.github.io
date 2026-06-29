@@ -23,5 +23,18 @@
       "base": true,
       "examples": true
     }
+  },
+  "dynamicfeed/dynamic-feed": {
+    "name": "Dynamic Feed",
+    "description": "Hosted keyless MCP server and A2A agent that serves verifiable live-data facts to AI agents. Every datapoint carries an Ed25519-signed provenance envelope and an OKF reliability grade (confidence band, basis, source count, verified flag, observation vantage). An open-source, zero-dependency reference validator ships in Python and JavaScript at github.com/dynamicfeed/df-verify.",
+    "standards": ["mcp", "a2a"],
+    "languages": ["python", "javascript"],
+    "maintainers": ["dynamicfeed"],
+    "official": false,
+    "website": "https://dynamicfeed.ai",
+    "levels": {
+      "base": true,
+      "examples": true
+    }
   }
 }
